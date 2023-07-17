@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+.wap {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding:  0 15px;
+}
+
+.navbar {
+    font-size: 100%;
+    /* display: flex; */
+    /* justify-content: space-between; */
+}
+
+.next {
+    margin: auto;
+    padding-left: 46.5%;
+}
+
+.label {
+    float: left;
+}
+
+.menu {
+    float: right;
+    background-color: rgb(198, 51, 65);
+    padding: 20px 20px;
+    border-radius: 10px ;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+}
+
+.menu ul li a{
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0 12px;
+    color: white;
+}
+
+.menu ul li a:hover {
+    color: rgb(200, 150, 150);
+}
+
+.minibox {
+    margin: auto;
+    transform: translateY(-40px);
+    width: 200px;
+    padding: 5px 5px;
+    border-radius: 10px;
+    background-color: rgb(175, 41, 41);
+    color: white;
+    text-align: center;
+}
+
+.menubox1 {
+    
+}
+
+.menubox1 ul {
+    display: flex;
+    list-style: none;
+}
+
+.menubox1 ul li {
+    width: 400px;
+}
+
+.menubox2 {
+    
+}
+
+.menubox2 ul {
+    display: flex;
+    list-style: none;
+}
+
+.menubox2 ul li {
+    width: 240px;
+}
+
+.menubox2 ul li img {
+    width: 200px;
+    height: 200px;
+}
+
+.menubox3 {
+    padding-bottom: 50px;
+}
+
+.menubox3 ul {
+    display: flex;
+    list-style: none;
+}
+
+.menubox3 ul li img {
+    width: 400px;
+    height: 160px;
+    padding: 0 60px;
+}
+
+.footer {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding:  0 15px;
+    height: auto;
+}
+
+.backgroundfooter {
+    background-color: rgb(180, 180, 180); 
+}
+
+.contentfooter {
+    display: flex;
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.p1 {
+    width: 600px;
+    height: auto;
+}
+
+.p1 ul li {
+    padding-top: 20px;
+    list-style: none;
+    display: flex;
+}
+
+.p1 ul li img {
+    width: 95px;
+    height: 95px;
+}
+
+.p2 {
+    width: 300px;
+    height: auto;
+}
+
+.p3 {
+    width: auto;
+}
+
+.p3 input{
+    width: 100%;
+    /* padding-top: 20px; */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

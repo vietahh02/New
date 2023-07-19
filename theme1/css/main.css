@@ -1,159 +1,180 @@
-*{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-family: Georgia, serif;
 }
+
+/* html {
+    scroll-behavior: smooth;
+} */
 
 .wap {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding:  0 15px;
+  max-width: 1000px;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  border: 1px solid #000;
 }
 
-.navbar {
-    font-size: 100%;
-    /* display: flex; */
-    /* justify-content: space-between; */
-}
-
-.next {
-    margin: auto;
-    padding-left: 46.5%;
+.header {
+  display: flex;
+  justify-content: space-between;
 }
 
 .label {
-    float: left;
-}
-
-.menu {
-    float: right;
-    background-color: rgb(198, 51, 65);
-    padding: 20px 20px;
-    border-radius: 10px ;
+  padding: 40px 20px;
 }
 
 .menu ul {
-    display: flex;
-    list-style: none;
+  display: flex;
+  margin: 40px 20px 40px 0;
+  padding: 20px 0;
+  list-style: none;
+  background-color: #e2494b;
+  border-radius: 10px;
 }
 
-.menu ul li a{
-    cursor: pointer;
-    text-decoration: none;
-    padding: 0 12px;
-    color: white;
+.menu ul li a {
+  text-decoration: none;
+  padding: 20px;
+  color: white;
+  font-size: 13px;
 }
 
 .menu ul li a:hover {
-    color: rgb(200, 150, 150);
+  color: #ee9395;
 }
 
-.minibox {
-    margin: auto;
-    transform: translateY(-40px);
-    width: 200px;
-    padding: 5px 5px;
-    border-radius: 10px;
-    background-color: rgb(175, 41, 41);
-    color: white;
-    text-align: center;
+.title {
+  padding: 40px 0;
+  line-height: 30px;
+  text-align: center;
+  font-size: 20px;
 }
 
-.menubox1 {
-    
+.radio {
+  max-width: 1000px;width: 100%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 40px;
 }
 
-.menubox1 ul {
-    display: flex;
-    list-style: none;
+.container {
+  margin: auto;
 }
 
-.menubox1 ul li {
-    width: 400px;
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #cecece;
+  margin: auto;
+  font: inherit;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-flex;
+  place-content: center;
 }
 
-.menubox2 {
-    
+input[type="radio"]::before {
+  content: "";
+  width: 10px;
+  height: 7px;
+  border: 2px solid black;
+  border-radius: 50%;
+  transform: scale(0);
+  background-color: white;
 }
 
-.menubox2 ul {
-    display: flex;
-    list-style: none;
+input[type="radio"]:checked::before {
+  transform: scale(1);
 }
 
-.menubox2 ul li {
-    width: 240px;
+.box {
+  width: 176px;
+  height: 30px;
+  margin: auto;
+  background-color: #e2494b;
+  border-radius: 8px;
+  transform: translateY(-16px);
+  margin-bottom: 15px;
 }
 
-.menubox2 ul li img {
-    width: 200px;
-    height: 200px;
+.box p {
+  text-align: center;
+  padding-top: 5px;
+  color: white;
 }
 
-.menubox3 {
-    padding-bottom: 50px;
+.menuservices {
+  margin: 0 20px 40px 20px;
+  display: inline-flex;
 }
 
-.menubox3 ul {
-    display: flex;
-    list-style: none;
+.service {
+  width: 320px;
+  height: auto;
 }
 
-.menubox3 ul li img {
-    width: 400px;
-    height: 160px;
-    padding: 0 60px;
+.ser {
+  display: flex;
+}
+
+.menuplayers {
+  margin: 0 10px 40px 10px;
+  display: inline-flex;
+}
+.avatar {
+  width: 176px;
+  margin: 0 10px;
+}
+
+.work {
+  display: flex;
+  margin: 0 20px 40px 20px;
+}
+
+.work img {
+  width: 300px;
+  height: 160px;
 }
 
 .footer {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding:  0 15px;
-    height: auto;
+  max-width: 1000px;
+  padding: 40px 20px 0 20px;
+  background-color: #e2e2e2;
+  display: flex;
 }
 
-.backgroundfooter {
-    background-color: rgb(180, 180, 180); 
+.one {
+  width: 490px;
 }
 
-.contentfooter {
-    display: flex;
-    padding-top: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
+.two {
+  width: 245px;
 }
 
-.p1 {
-    width: 600px;
-    height: auto;
+.three {
+  width: 225px;
 }
 
-.p1 ul li {
-    padding-top: 20px;
-    list-style: none;
-    display: flex;
+.img {
+  width: 107px;
+  border: 1px solid #000;
 }
 
-.p1 ul li img {
-    width: 95px;
-    height: 95px;
+.img img {
+  width: 95px;
+  height: 95px;
+  margin: 5px;
 }
 
-.p2 {
-    width: 300px;
-    height: auto;
-}
-
-.p3 {
-    width: auto;
-}
-
-.p3 input{
-    width: 100%;
-    /* padding-top: 20px; */
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.last {
+  color: #999999;
+  padding: 24px 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
 }

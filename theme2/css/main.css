@@ -1,159 +1,229 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-size: 100%;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+body {
+    max-width: 960px;
+    border-left: 20px solid #d0d0d0;
+    border-right: 20px solid #d0d0d0;
+    margin: auto;
+}
+
+@import url(https://db.onlinewebfonts.com/c/aa0978a3bd6a626f739efaff3d30955e?family=Georgia+Pro+W01+Regular);
+@font-face {
+  font-family: "Georgia Pro W01 Regular";
+  src: url("https://db.onlinewebfonts.com/t/aa0978a3bd6a626f739efaff3d30955e.eot");
+  src: url("https://db.onlinewebfonts.com/t/aa0978a3bd6a626f739efaff3d30955e.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/aa0978a3bd6a626f739efaff3d30955e.woff2")
+      format("woff2"),
+    url("https://db.onlinewebfonts.com/t/aa0978a3bd6a626f739efaff3d30955e.woff")
+      format("woff"),
+    url("https://db.onlinewebfonts.com/t/aa0978a3bd6a626f739efaff3d30955e.ttf")
+      format("truetype"),
+    url("https://db.onlinewebfonts.com/t/aa0978a3bd6a626f739efaff3d30955e.svg#Georgia Pro W01 Regular")
+      format("svg");
 }
 
 :root {
-    --purple : #894aa3;
-    --gray1: #666666;
-    --background-gray: #ebebea;
+  --purple: #894aa3;
+  --gray1: #666666;
+  --background-gray: #ebebea;
 }
 
 .wapper {
-    max-width: 960px;
-    width: 100%;
-    margin: auto;
-    height: auto;
-    z-index: 6;
+  max-width: 960px;
+  width: 100%;
+  margin: auto;
+  height: auto;
+  z-index: 6;
 }
 
-.header1  {
-    background-color: var(--purple);
-    padding-top: 10px;
-    z-index: 2;
+.header1 {
+  background-color: var(--purple);
+  padding-top: 10px;
+  z-index: 2;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
 }
 
 .header2 {
-    float: left;
-    padding-top: 36px;
-    padding-left: 30px;
+  float: left;
+  padding-top: 36px;
+  padding-left: 30px;
 }
 
 .header3 {
-    float: right;
-    padding-right: 30px;
+  float: right;
+  padding-right: 30px;
 }
 
 .searchbox {
-    float: right;
-    display: flex;
+  float: right;
+  display: flex;
 }
 
 #search {
-    border: none;
-    padding: 5px;
-    z-index: 1;
-    background-color: #ebebea;
-    border-end-end-radius: 10px;
-    border-end-start-radius: 10px ;
+  border: none;
+  width: 216px;
+  height: 28px;
+  padding: 5px;
+  z-index: 1;
+  background-color: #ebebea;
+  border-end-end-radius: 10px;
+  border-end-start-radius: 10px;
 }
 
-.menu {
-    padding-top: 45px;
-}
-
-.menu ul {
-    list-style: none;
+.test {
     display: flex;
-    
-}
-
-.menu ul li a{
-    padding: 15px;
-    text-decoration: none;
-    font-size: 13px;
-    color: #666666;
-}
-
-.menu ul li a:hover {
-    color: black;
-}
-
-.body {
-    /* background-color: var(--background-gray); */
-}
-
-.body img {
-    max-width: 960px;
-    width: 100%;
-    max-height: 380px;
-    height: auto;
-}
-
-.imgradio {
-    padding-left: 30px;
-    transform: translateY(-40px);
-}
-
-.menu1 {
-    max-width: 960px;
-    width: 100%;
-    height: auto;
-    padding: 46px 15px 46px 15px;
-}
-
-.menu1 ul {
-    display: flex;
-    list-style: none;
-}
-
-.menu1 ul li{
-    display: flex;
-    width: 280px;
-    padding: 0 15px 0 15px;
-}
-
-.menu1 ul li img {
-    width: 48px;
-    height: 48px;
-}
-
-.menu2 {
-    background-color: var(--background-gray);
-    padding: 50px 30px 50px 30px;
-}
-
-.menu2 ul {
-    display: flex;
-    list-style: none;
-    background-color: var(--background-gray);
     justify-content: space-between;
 }
 
+.title1 {
+    padding: 23px 0 15px 18px;
+    width: 450px;
+    height: 120px;
+    background-color: #000;
+    color: white;
+    transform: translateY(-161px);
+    margin-bottom: -161px;
+  }
+
+.radio {
+  padding-left: 30px;
+  transform: translateY(-40px);
+}
+
+.container {
+  margin: auto;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #666666;
+  margin: auto;
+  font: inherit;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-flex;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 10px;
+  height: 7px;
+  border: 2px solid #666666;
+  border-radius: 50%;
+  transform: scale(0);
+  background-color: #333333;
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+.menu {
+  padding-top: 73px;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+}
+
+.menu ul li a {
+  padding: 15px;
+  text-decoration: none;
+  font-size: 13.5px;
+  color: #666666;
+}
+
+.menu ul li a:hover {
+  color: black;
+}
+
+.body {
+  /* background-color: var(--background-gray); */
+}
+
+.body img {
+  max-width: 960px;
+  width: 100%;
+  max-height: 380px;
+  height: auto;
+}
+
+.menu1 {
+  max-width: 960px;
+  width: 100%;
+  height: auto;
+  padding: 46px 15px 46px 15px;
+}
+
+.menu1 ul {
+  display: flex;
+  list-style: none;
+}
+
+.menu1 ul li {
+  display: flex;
+  width: 280px;
+  padding: 0 15px 0 15px;
+}
+
+.menu1 ul li img {
+  width: 48px;
+  height: 48px;
+}
+
+.menu2 {
+  background-color: var(--background-gray);
+  padding: 50px 30px 50px 30px;
+}
+
+.menu2 ul {
+  display: flex;
+  list-style: none;
+  background-color: var(--background-gray);
+  justify-content: space-between;
+}
+
 .menu2 ul li {
-    padding: 0 10px;
-    padding-top: 10px;
-    background-color: white;
+  padding: 0 10px;
+  padding-top: 10px;
+  background-color: white;
 }
 
 .menu2 ul li img {
-    width: 260px;
-    height: 180px;
+  width: 260px;
+  height: 180px;
 }
 
 .footer {
-    display: flex;
-    padding: 40px 15px;
+  display: flex;
+  padding: 40px 15px;
 }
 
 .footer1 {
-    max-width: 200px;
-    width: 100%;
-    padding: 0 15px;
+  max-width: 200px;
+  width: 100%;
+  padding: 0 15px;
 }
 
 .footer1 a:hover {
-    color: #b785cc;
+  color: #b785cc;
 }
 
 .last {
-    background-color: #444444;
+  background-color: #444444;
 }

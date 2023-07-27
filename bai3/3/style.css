@@ -1,0 +1,9 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 30px;
+}
+
+body {
+    max-width: 1600px;width: 100%;margin: auto;text-align: center;margin-top: 100px;line-height: 60px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--  -->
+    <form id="frm1" action="">
+      <script>
+        var myArray = new Array();
+        myArray[0] = "Anh";
+        myArray[1] = "Phap";
+        myArray[2] = "Duc";
+        myArray[3] = "VN";
+
+        for (var i = 0; i < myArray.length; i++) {
+          document.write(
+            myArray[i] +
+              ":" +
+              `<input type="text" name="${myArray[i]}" placeholder="${myArray[i]}" value="0"><br>`
+          );
+        }
+      </script>
+    </form>
+    <button onclick="myFunction()">Ve do thi</button>
+    <div>
+      <script>
+        var x = document.getElementById("frm1");
+        var text = "";
+        var i;
+        document.write('<table style="margin: auto;">');
+        for (i = 0; i < x.length; i++) {
+          document.write("<tr>");
+          document.write(`<td>${myArray[i]}</td>`);
+          document.write('<td style="display: flex;gap: 20px;">');
+          document.write('<div style="display: flex;gap: 10px;">');
+          document.write(
+            `<p id="${myArray[i]}" style="background-color: red;padding: 10px ${x.elements[i].value}px 10px 0;"></p> `
+          );
+          document.write(`<p id="${i}">${x.elements[i].value} % </p>`);
+          document.write("</div>");
+          document.write("</td>");
+          document.write("</tr>");
+        }
+        document.write("</table>");
+        function myFunction() {
+          for (i = 0; i < x.length; i++) {
+            document.getElementById(`${myArray[i]}`).style.paddingRight =
+              `${x.elements[i].value}` + "px";
+            document.getElementById(`${i}`).innerHTML =
+              `${x.elements[i].value}` + "%";
+          }
+        }
+      </script>
+    </div>
+  </body>
+</html>

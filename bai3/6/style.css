@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+}
+
+body {
+    margin: 50px;
+}
+
+button {
+    width: 40px;
+    border-top-color: rgb(202, 202, 202) !important;
+    border-left-color: rgb(202, 202, 202) !important;
+    border-color: black;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    border-bottom-color: rgb(202, 202, 202) !important;
+    border-right-color: rgb(202, 202, 202) !important;
+    border-color: black;
+    width: 50px;height: 30px;
+    padding-left: 3px ;
+}
+
+b {
+    margin: auto;
+}
+
+.result {
+    border: 2px solid black;
+    border-bottom-color: rgb(202, 202, 202) !important;
+    border-right-color: rgb(202, 202, 202) !important;
+    width: 90px;height: 30px;
+    padding-left: 3px ;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <input type="text" id="number"/>
+    <button onclick="myFunction()">Ve tam giac</button>
+    <p id="demo" style="margin-top: 20px;font-size: 30px;"></p>&nbsp;
+    <script>
+      function myFunction() {
+        number = Number(document.getElementById("number").value);
+        text = ""
+        space = "&nbsp;&nbsp;"
+        for (var i = 1; i <=number; i++) {
+            for (var j = 0; j <= number-i; j++) {
+                text += space 
+            } 
+            if (i>9) {
+                for (var j = i; j > i/2; j--) {
+                    if (j>9) {
+                        let x = j.toString();
+                        text += x.substring(x.length-1) + space
+                    }else {
+                        text += j + space
+                    }
+                }
+                for (var j = Math.round(i/2)+1; j <= i; j++) {
+                    if (j>9) {
+                        let x = j.toString();
+                        text += x.substring(x.length-1) + space
+                    }else {
+                        text += j + space
+                    }
+                }
+                 text += "<br>"
+            }else {
+                for (var j = i; j > i/2; j--) {
+                    text += j + space
+                }
+                for (var j = Math.round(i/2)+1; j <= i; j++) {
+                    text += j + space
+                }
+                text += "<br>"
+            }
+        }
+        document.getElementById("demo").innerHTML = text;
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+      <div style="display: inline-flex;">
+        <p id="demo1">0</p>
+        <p id="demo2">0</p>
+        <p>:</p>
+        <p id="demo3">0</p>
+        <p id="demo4">0.0</p>
+      </div>
+      <div>
+        <button id="sta" onclick="start()">Start</button>
+        <button id="sto" onclick="stop()">Stop</button>
+        <button id="res" onclick="reset()">Reset</button>
+      </div>
+
+    <script>
+      function start() {
+        my = setInterval(myTimer, 100);
+        function myTimer() {
+          var d4 = Number(document.getElementById("demo4").innerHTML);
+          var d3 = Number(document.getElementById("demo3").innerHTML);
+          var d2 = Number(document.getElementById("demo2").innerHTML);
+          var d1 = Number(document.getElementById("demo1").innerHTML);
+          document.getElementById("sta").disabled = true;
+          if (d3 == 6) {
+            document.getElementById("demo2").innerHTML = d2 + 1;
+            document.getElementById("demo3").innerHTML = 0;
+          } else if (d2 == 10) {
+            document.getElementById("demo1").innerHTML = d1 + 1;
+            document.getElementById("demo2").innerHTML = 0;
+          } else if (d4 == 9.9) {
+            document.getElementById("demo3").innerHTML = d3 + 1;
+            document.getElementById("demo4").innerHTML = 0;
+          } else {
+            document.getElementById("demo4").innerHTML = (d4 + 0.1).toFixed(1);
+          }
+        }
+      }
+      function stop() {
+        document.getElementById("sta").disabled = false;
+        clearInterval(my);
+      }
+      function reset() {
+        document.getElementById("demo1").innerHTML = 0;
+        document.getElementById("demo2").innerHTML = 0;
+        document.getElementById("demo3").innerHTML = 0;
+        document.getElementById("demo4").innerHTML = 0;
+      }
+    </script>
+  </body>
+</html>

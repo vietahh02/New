@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div style="display: inline-flex; justify-content: center; gap: 15px">
+      <input type="text" id="n1" />
+      <button id="operators1" onclick="calculator1()" value="+">+</button>
+      <button id="operators2" onclick="calculator2()" value="-">-</button>
+      <button id="operators3" onclick="calculator3()" value="*">x</button>
+      <button id="operators4" onclick="calculator4()" value="/">/</button>
+      <button id="operators5" onclick="calculator5()" value="^">^</button>
+      <input type="text" id="n2" />
+      <b style="font-size: 25px">=</b>
+      <p class="result" id="result"></p>
+    </div>
+    <script>
+        function number() {
+          n1 = Number(document.getElementById("n1").value);
+          n2 = Number(document.getElementById("n2").value);
+        }
+        function calculator1() {
+          number();
+          operator = document.getElementById("operators1").value;
+          document.getElementById("result").innerHTML = n1 + n2;
+        }
+        function calculator2() {
+          number();
+          operator = document.getElementById("operators2").value;
+          document.getElementById("result").innerHTML = n1 - n2;
+        }
+        function calculator3() {
+          number();
+          operator = document.getElementById("operators3").value;
+          document.getElementById("result").innerHTML = n1 * n2;
+        }
+        function calculator4() {
+          number();
+          operator = document.getElementById("operators4").value;
+          document.getElementById("result").innerHTML = parseFloat((n1/n2).toFixed(6));
+        }
+        function calculator5() {
+          number();
+          operator = document.getElementById("operators5").value;
+          document.getElementById("result").innerHTML = Math.pow(n1, n2);
+        }
+    </script>
+  </body>
+</html>

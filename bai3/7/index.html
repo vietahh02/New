@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <script>
+      const my = new Date();
+      const days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+      const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      let month = months[my.getMonth()];
+      document.write(`<div class="calendar">`)
+      document.write(`<p class="year">${month + "&nbsp;" + my.getFullYear().toString()}</p>`)
+      document.write(`<div style="display: inline-flex; margin-top: 5px; gap: 20px">
+        <p>Su</p>
+        <p>M</p>
+        <p>Tu</p>
+        <p>W</p>
+        <p>Th</p>
+        <p>F</p>
+        <p>Sa</p>
+      </div>`)
+      for (let i = 1; i <= 31; i++) {
+        const date1 = new Date(
+          `${my.getFullYear()}-${my.getMonth()+1}-${i}`);
+        if (i==1) {
+            document.write(`<div style="display: inline-flex; margin-top: 5px; gap: 20px">`)
+            for (let j = 0; j < date1.getDay(); j++) {
+                document.write(`<p style="border: 0; padding-right: 4px"></p>`);
+            }
+        }          
+        if (i != 1 && date1.getDate() == 1) {
+            document.write(`</div>`)
+          break;
+        } else if (my.getDate() == date1.getDate()) {
+          document.write(`<p class="today">${date1.getDate()}</p>`);
+        } else {
+          document.write(`<p>${date1.getDate()}</p>`);
+        }
+        if (date1.getDay() == 6) {
+            document.write(`</div>`)
+            document.write(`<div style="display: inline-flex; margin-top: 5px; gap: 20px">`)
+        }
+      }
+      document.write(`</div>`)
+    </script>
+  </body>
+</html>

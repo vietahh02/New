@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --red: #f95050;
+  --white: #fcfcfc;
+  --border: #ebebeb;
+  --font:#8497a0;
+}
+
+.container {
+  background-image: url("./img/background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+  height: 642px;
+  margin-top: 50px;
+}
+
+.calendar {
+  width: 462px;
+  height: auto;
+  margin: auto;
+  position: relative;
+  top: 80px;
+  background-color: var(--white);
+  border-radius: 10px !important;
+}
+
+.head {
+  position: relative;
+  height: 102px;
+  color: var(--white);
+  background-color: var(--red);
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 25px 45px 0 45px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  box-shadow: 0 3px 1px 0 #ce9999;
+}
+
+button {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  top: -10px;
+}
+
+.month_year {
+  position: relative;
+  font-size: 26px;
+  font-family: sans-serif;
+  top: 10px;
+}
+
+.dates {
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+}
+
+.dates div {
+  border: 1px solid var(--border);
+  width: 66px;
+  text-align: center;
+  height: auto;
+  color: #8497a0;
+  padding: 18px 0;
+}
+
+.dates div:hover {
+  background-color: #e6e6e6;
+}
+
+.dates :nth-child(odd) {
+  background-color: #fcfcfc;
+}
+
+.dates :nth-child(even) {
+background-color: #ffffff;
+}
+
+.today {
+  color: #f95050 !important;
+}
+
+.dayOutOfMonth {
+  color: #afbfc6 !important;
+}
+
+.days {
+  margin-top: 10px;
+  display: flex;
+}
+
+.days div {
+  width: 66px;
+  font-size: 15px;
+  text-align: center;
+  height: auto;
+  color: #f95050;
+  padding: 3px 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+

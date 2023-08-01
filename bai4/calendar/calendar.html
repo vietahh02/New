@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/9694815f86.js"
+      crossorigin="anonymous" defer
+    ></script>
+  </head>
+  <body> 
+    <div class="container">
+      <div class="calendar">
+        <div class="head">
+          <button id="left" onclick="prevMonth()" >
+            <i
+            class="fa-solid fa-chevron-left"
+            style="
+              color: #ffffff;
+              position: relative;
+              font-size: 50px;
+              cursor: pointer;
+            "
+          ></i>
+          </button>
+          <div class="month_year">
+            <div id="month_year">JUNE 2014</div>
+          </div>
+          <button id="right" onclick="nextMonth()">
+            <i
+            class="fa-solid fa-chevron-right"
+            style="
+              color: #ffffff;
+              position: relative;
+              font-size: 50px;
+              cursor: pointer;
+            "
+          ></i>
+          </button>
+        </div>
+        <div class="dates" id="dates"></div>
+      </div>
+      <div class="calendar days">
+        <div>SU</div>
+        <div>MO</div>
+        <div>TU</div>
+        <div>WE</div>
+        <div>TH</div>
+        <div>FR</div>
+        <div>SA</div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="screen">
+            <div class="nameCal">
+                <div>
+                    CALCUS&#174;
+                </div>
+                <div class="pin" id="pin">
+                    <div class="low"></div>
+                    <div class="low"></div>
+                    <div class="low"></div>
+                    <div class="low"></div>
+                    <div class="low"></div>
+                </div>
+            </div>
+            <div class="screenCalculator">
+                <h4 id="plus"></h4>
+                <p id="result"></p>
+            </div>
+        </div>
+        <hr>
+        <div class="body">
+            <div class="firstRow">
+                <button class="on_off" onclick="turnOnOff()" id="turn">off</button>
+                <button class="" onclick="clearNum()">C</button>
+                <button class="" onclick="deleteNum()">&larr;</button>
+                <button class="">M-</button>
+                <button class="">M+</button>
+                <button class="" onclick="special('ra')">&radic;</button>
+                <button class="" onclick="special('pow')">^</button>
+            </div>
+            <div class="buttonNum">
+                <button class="" onclick="number(1)">1</button>
+                <button class="" onclick="number(2)">2</button>
+                <button class="" onclick="number(3)">3</button>
+                <button class="" onclick="operator('+')">+</button>
+                <button class="" onclick="number(4)">4</button>
+                <button class="" onclick="number(5)">5</button>
+                <button class="" onclick="number(6)">6</button>
+                <button class="" onclick="operator('-')">-</button>
+                <button class="" onclick="number(7)">7</button>
+                <button class="" onclick="number(8)">8</button>
+                <button class="" onclick="number(9)">9</button>
+                <button class="" onclick="operator('x')">x</button>
+                <button class="" onclick="number(0)">0</button>
+                <button class="" onclick="decimal()">.</button>
+                <button class="" onclick="resultNum()">=</button>
+                <button class="" onclick="operator('/')">&divide;</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bignumber.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

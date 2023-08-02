@@ -1,0 +1,339 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: auto;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+button {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.header {
+  max-width: 1024px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 27px 20px;
+  margin: auto;
+}
+.logo {
+  cursor: pointer;
+}
+.search i {
+  position: relative;
+  font-size: 20px;
+  top: 4px;
+  right: 35px;
+  cursor: pointer;
+}
+
+.search input[type="text"] {
+  width: 435px;
+  height: 35px;
+  border: 2px solid #e1e1e1;
+  padding: 0 50px 0 10px;
+}
+
+.myMoney {
+  color: #a1a1a1;
+  font-size: 30px;
+  gap: 10px;
+  display: flex;
+  text-align: center;
+}
+
+.myMoney i {
+  position: relative;
+  top: 15px;
+  cursor: pointer;
+}
+.menu ul {
+  display: flex;
+  list-style: none;
+  column-rule-style: solid;
+  background-color: #4ccfc1;
+  padding: 10px 128px;
+}
+
+.menu ul li {
+  display: flex;
+  margin: auto;
+}
+
+.menu ul li a {
+  padding-right: 10px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+.menu ul li a:hover {
+  color: #1e4844;
+}
+
+.menu ul li p {
+  position: relative;
+  width: 1px;
+  height: 10px;
+  background-color: black;
+}
+
+.line {
+  width: 1px;
+  height: 15px;
+  background-color: white;
+}
+
+.feature {
+  background-image: url(./img/background.png);
+  padding: 20px 128px;
+  text-align: left;
+  font-size: 32px;
+  color: aliceblue;
+}
+
+.products ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 46px;
+  padding: 46px 128px 73px;
+  list-style: none;
+}
+
+.products li {
+  width: 255px;
+  height: 255px;
+  border-bottom: 5px solid #3cc395 !important;
+  border: 2px solid #e4e4e4;
+  padding-top: 20px;
+}
+
+.products li div {
+  margin: auto;
+  text-align: center;
+  font-size: 25px;
+  color: #afafaf;
+}
+
+.productsBuy {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: auto;
+}
+
+.productsBuy button {
+  padding: 3px 10px;
+  font-size: 20px;
+  background-color: #3cc395;
+  border: none;
+  color: aliceblue;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.productsBuy button:hover {
+  background-color: #1e4844;
+  color: #3cc395;
+}
+
+.footer {
+  background-image: url(./img/background.png);
+}
+
+.footer ul {
+  display: flex;
+  justify-content: space-around;
+  padding: 42px 128px;
+  list-style: none;
+}
+
+.title {
+  font-size: 30px;
+  color: aliceblue;
+}
+
+.content {
+  display: grid;
+  font-family: "Open Sans", sans-serif !important;
+  font-weight: 300;
+  font-size: 15px;
+  padding: 28px 0 0 10px;
+}
+
+.content a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.content a:hover {
+  color: #1e4844;
+}
+
+.end {
+  font-family: "Open Sans", sans-serif !important;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: #2da89b;
+  margin: auto;
+  text-align: center;
+  padding: 8px;
+  color: aliceblue;
+}
+
+.productSlider {
+  padding: 0 128px;
+  text-align: left;
+}
+
+.productItem {
+  margin-top: 10px;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+  padding: 0 40px;
+}
+
+.productName {
+  margin-top: 30px;
+}
+
+.productName p {
+  color: #afafaf;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.productName button {
+  background-color: #3cc395;
+  color: aliceblue;
+  font-size: 17px;
+  padding: 5px 13px;
+  border: none;
+  border-radius: 5px;
+}
+
+.spec {
+  border-inline: 2px solid #e7e7e7;
+}
+
+.slick-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  background: none;
+  color: #e2e2e2;
+  border: none;
+  z-index: 2;
+  padding: 10px 20px;
+  font-size: 60px;
+}
+
+.slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  background: none;
+  color: #e2e2e2;
+  border: none;
+  padding: 10px 20px;
+  font-size: 60px;
+}
+
+.bannerSlider {
+  height: 446px;
+  background-image: url(./img/background.png);
+  padding: 67px 128px 0 128px;
+}
+
+.bannerItem {
+  padding-left: 78px;
+  padding-right: 162px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  color: aliceblue;
+}
+
+.itemContent h1 {
+  font-size: 50px;
+}
+
+.itemContent p {
+  font-family: "Open Sans", sans-serif !important;
+  margin-bottom: 33px;
+}
+
+.itemContent button {
+  font-size: 20px;
+  background-color: transparent;
+  padding:3px 30px;
+  border-radius: 5px;
+  border:2px solid aliceblue;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.itemContent button:hover {
+  background-color: #1e4844;
+}
+
+.img {
+  display: grid;
+}
+
+.img img {
+  position: relative;
+  color: transparent;
+  z-index: 2;
+}
+
+.img p {
+  position: relative;
+  height: 10px;
+  width: 184px;
+  background-image: radial-gradient(#487c75 5%, transparent 70%);
+  z-index: 1;
+  left: 53px;
+  top: -5px;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: 40px;
+  left: 48%;
+  transform: translate();
+  display: flex !important;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0 20px;
+  
+  
+}
+
+.slick-dots button {
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  border: none;
+  border-radius: 50%;
+}
+
+.slick-dots .slick-active button {
+  background-color: #77d9c9;
+}

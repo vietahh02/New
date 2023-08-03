@@ -41,16 +41,28 @@ function operator(val) {
 }
 
 function special(val) {
-  if (val == "ra") {
-    plus.innerHTML = "&radic;" + "(" + result.innerHTML + ")";
-    result.innerHTML = parseFloat(
-      Math.sqrt(Number(result.innerHTML)).toFixed(5)
-    );
-  } else if (val == "pow") {
-    plus.innerHTML = "(" + result.innerHTML + ")^2";
-    result.innerHTML = parseFloat(
-      Math.pow(Number(result.innerHTML), 2).toFixed(5)
-    );
+  x = plus.innerHTML.split(" ");
+  if (result.innerHTML == "" && plus.innerHTML == "") {
+  } else {
+    if (val == "ra") {
+      plus.innerHTML = "&radic;" + "(" + result.innerHTML + ")";
+      result.innerHTML = parseFloat(
+        Math.sqrt(Number(result.innerHTML)).toFixed(6)
+      );
+    } else if (val == "pow") {
+      plus.innerHTML = "(" + result.innerHTML + ")^2";
+      result.innerHTML = Math.pow(Number(result.innerHTML), 2);
+      if (result.innerHTML.length > 12) {
+        result.style.fontSize = "30px";
+        result.style.margin = "90px 5px 0 0";
+      } else if (result.innerHTML.length > 6) {
+        result.style.fontSize = "60px";
+        result.style.margin = "60px 5px 0 0";
+      } else if (result.innerHTML.length < 6) {
+        result.style.fontSize = "80px";
+        result.style.margin = "40px 5px 0 0";
+      }
+    }
   }
 }
 
@@ -58,19 +70,19 @@ function calculate(val) {
   x = plus.innerHTML.split(" ");
   switch (x[1]) {
     case "+":
-      result.innerHTML = parseFloat((Number(x[0]) + Number(val)).toFixed(5));
+      result.innerHTML = parseFloat((Number(x[0]) + Number(val)).toFixed(6));
       break;
     case "-":
-      result.innerHTML = parseFloat((Number(x[0]) - Number(val)).toFixed(5));
+      result.innerHTML = parseFloat((Number(x[0]) - Number(val)).toFixed(6));
       break;
     case "x":
-      result.innerHTML = parseFloat((Number(x[0]) * Number(val)).toFixed(5));
+      result.innerHTML = parseFloat((Number(x[0]) * Number(val)).toFixed(6));
       break;
     case "/":
       if (val == 0) {
         alert("chia cho 0");
       } else {
-        result.innerHTML = parseFloat((Number(x[0]) / Number(val)).toFixed(5));
+        result.innerHTML = parseFloat((Number(x[0]) / Number(val)).toFixed(6));
       }
       break;
   }
@@ -117,23 +129,23 @@ function deleteNum() {
 }
 
 function turnOnOff() {
-    pin.innerHTML=''
+  pin.innerHTML = "";
   if (status == "off") {
     status = "on";
     turn.innerHTML = "on";
-    for (var i = 0; i <5;i++) {
-        const newElement = document.createElement('div')
-        newElement.className = "high"
-        pin.appendChild(newElement)
+    for (var i = 0; i < 6; i++) {
+      const newElement = document.createElement("div");
+      newElement.className = "high";
+      pin.appendChild(newElement);
     }
   } else {
     clearNum();
     status = "off";
     turn.innerHTML = "off";
-    for (var i = 0; i <5;i++) {
-        const newElement = document.createElement('div')
-        newElement.className = "low"
-        pin.appendChild(newElement)
+    for (var i = 0; i < 6; i++) {
+      const newElement = document.createElement("div");
+      newElement.className = "low";
+      pin.appendChild(newElement);
     }
   }
 }

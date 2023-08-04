@@ -66,6 +66,20 @@ function special(val) {
   }
 }
 
+function decimal() {
+  k = result.innerHTML;
+  for (i = 0; i < k.length; i++) {
+    if (k[i] == ".") {
+      k = "no";
+      break;
+    }
+  }
+  if (k == "no") {
+  } else {
+    result.innerHTML += ".";
+  }
+}
+
 function calculate(val) {
   x = plus.innerHTML.split(" ");
   switch (x[1]) {
@@ -93,12 +107,19 @@ function clearNum() {
   plus.innerHTML = "";
 }
 
-c = 0;
-
 function resultNum() {
+  c = 0;
   x = plus.innerHTML.split(" ");
-
-  if (x[1] == "=" || "(" in x[0] || "(" in x[0]) {
+  p = x[0];
+  for (var i = 0; i < p.length; i++) {
+    if (p[i] == "(") {
+      plus.innerHTML = result.innerHTML + " =";
+      c=1
+      break
+    }
+  }
+  if (x[1] == "=") {
+  } else if (c != 0) {
   } else {
     if (plus.innerHTML == "") {
       plus.innerHTML = result.innerHTML + " =";
@@ -109,11 +130,11 @@ function resultNum() {
       k = x[2];
       if (x.length == 4) {
         plus.innerHTML = result.innerHTML + " " + x[1] + " " + k + " " + "=";
-        c = 1;
+        // c = 1;
         calculate(k);
       } else {
         plus.innerHTML += " " + result.innerHTML + " =";
-        c = 1;
+        // c = 1;
         calculate(result.innerHTML);
       }
     }

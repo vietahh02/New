@@ -23,20 +23,11 @@ function number(val) {
 function operator(val) {
   x = plus.innerHTML.split(" ");
   if (result.innerHTML == "" && plus.innerHTML == "") {
+  } else if (x[0]!=""&&x[1]!="") {
+    plus.innerHTML = x[0] + " " + val;
   } else {
-    if (val == "+") {
-      plus.innerHTML = result.innerHTML + " " + "+";
-      result.innerHTML = "";
-    } else if (val == "-") {
-      plus.innerHTML = result.innerHTML + " " + "-";
-      result.innerHTML = "";
-    } else if (val == "x") {
-      plus.innerHTML = result.innerHTML + " " + "x";
-      result.innerHTML = "";
-    } else if (val == "/") {
-      plus.innerHTML = result.innerHTML + " " + "/";
-      result.innerHTML = "";
-    }
+    plus.innerHTML = result.innerHTML + " " + val;
+    result.innerHTML = "";
   }
 }
 
@@ -114,8 +105,8 @@ function resultNum() {
   for (var i = 0; i < p.length; i++) {
     if (p[i] == "(") {
       plus.innerHTML = result.innerHTML + " =";
-      c=1
-      break
+      c = 1;
+      break;
     }
   }
   if (x[1] == "=") {
@@ -130,11 +121,9 @@ function resultNum() {
       k = x[2];
       if (x.length == 4) {
         plus.innerHTML = result.innerHTML + " " + x[1] + " " + k + " " + "=";
-        // c = 1;
         calculate(k);
       } else {
         plus.innerHTML += " " + result.innerHTML + " =";
-        // c = 1;
         calculate(result.innerHTML);
       }
     }

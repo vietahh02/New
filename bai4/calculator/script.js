@@ -23,8 +23,10 @@ function number(val) {
 function operator(val) {
   x = plus.innerHTML.split(" ");
   if (result.innerHTML == "" && plus.innerHTML == "") {
-  } else if (x[0]!=""&&x[1]!="") {
-    plus.innerHTML = x[0] + " " + val;
+  } else if (x[0]!=""&&x[1]!=""&&result.innerHTML!="") {
+    calculate(result.innerHTML)
+    plus.innerHTML = result.innerHTML + " " + val;
+    result.innerHTML = "";
   } else {
     plus.innerHTML = result.innerHTML + " " + val;
     result.innerHTML = "";
@@ -103,7 +105,7 @@ function resultNum() {
   x = plus.innerHTML.split(" ");
   p = x[0];
   for (var i = 0; i < p.length; i++) {
-    if (p[i] == "(") {
+    if (p[i] == "(" && x[1]!="") {
       plus.innerHTML = result.innerHTML + " =";
       c = 1;
       break;

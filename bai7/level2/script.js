@@ -76,6 +76,8 @@ function orderElement() {
   for (let i = 0; i < b.length; i++) {
     if (b[i] != "") {
       const newE = document.createElement("li");
+      newE.onclick = toggleClass;
+      newE.draggable = "true";
       newE.innerHTML = b[i].innerHTML;
       myList.appendChild(newE);
     }

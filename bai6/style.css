@@ -45,7 +45,7 @@
 }
 .menu ul li a:hover {
   background-color: #d45e5e;
-  color: white;
+  color: #ffffff;
 }
 
 .title {
@@ -55,7 +55,7 @@
 }
 
 .quote {
-  background-color: white;
+  background-color: #ffffff;
 }
 .quote i {
   font-size: 60.5pt;
@@ -262,14 +262,14 @@
     padding-top: 45px;
   }
   .quote {
-    background-color: white;
+    background-color: #ffffff;
   }
   .quote i {
     font-size: 40.5pt;
   }
   .quote p {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    font-size: 12.5pt;
+    font-size: 11pt;
     font-style: italic;
     padding: 30px 0;
   }
@@ -337,6 +337,6 @@
     position: relative;
     top: -230px;
     height: 1px;
-    background-color: white;
+    background-color: #ffffff;
   }
 }/*# sourceMappingURL=style.css.map */

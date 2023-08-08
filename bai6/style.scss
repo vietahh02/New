@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Sans&display=swap');
-$fontBebas: 'Bebas Neue', sans-serif;
-$fontPTSans: 'PT Sans', sans-serif;
+@import "variables";
+
 
 * {
     margin: 0;
@@ -45,16 +45,17 @@ $fontPTSans: 'PT Sans', sans-serif;
 
     ul li a {
         padding: 70px 10px 10px;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-family: $fontHN;
         font-size: 16.5pt;
         text-decoration: none;
-        color: black;
+        color: $color-black;
         white-space: nowrap;
     }
 
     ul li a:hover {
-        background-color: #d45e5e;
-        color: white;
+        // background-color: $color-red;
+        background-color: $color-red;
+        color:$color-white;
     }
 }
 
@@ -65,14 +66,14 @@ $fontPTSans: 'PT Sans', sans-serif;
 }
 
 .quote {
-    background-color: white;
+    background-color:$color-white;
 
     i {
         font-size: 60.5pt;
     }
 
     p {
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-family: $fontCambria;
         font-size: 22.5pt;
         font-style: italic;
         padding: 30px 0;
@@ -85,7 +86,7 @@ $fontPTSans: 'PT Sans', sans-serif;
 
     p {
         height: 1px;
-        background-color: #f1eded;
+        background-color: $color-background-pen;
     }
 
     h3 {
@@ -107,7 +108,7 @@ $fontPTSans: 'PT Sans', sans-serif;
     p {
         font-size: 20pt;
         font-style: italic;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-family: $fontCambria;
         padding-bottom: 40px;
     }
 }
@@ -124,14 +125,14 @@ $fontPTSans: 'PT Sans', sans-serif;
     padding: 0 0 0 182px;
 
     img {
-        border: 7px solid #ffffff;
+        border: 7px solid $color-white;
     }
 }
 
 .footer {
     padding: 16px 0 45px 182px;
-    background-color: #d45e5e;
-    color: #ffffff;
+    background-color: $color-red;
+    color: $color-white;
     display: flex;
 }
 
@@ -144,7 +145,7 @@ $fontPTSans: 'PT Sans', sans-serif;
 
     h3 {
         font-size: 20pt;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-family: $fontCambria;
         font-style: italic;
         font-weight: lighter;
         padding-bottom: 10px;
@@ -189,7 +190,7 @@ $fontPTSans: 'PT Sans', sans-serif;
     padding: 26px 0 0 75px;
 
     p {
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-family: $fontCambria;
         font-size: 24.5pt;
     }
 }
@@ -214,7 +215,7 @@ $fontPTSans: 'PT Sans', sans-serif;
         top: 8px;
         width: 200px;
         height: 10px;
-        background-color: #e27878;
+        background-color: $color-red-light;
     }
 
     h3 {
@@ -222,7 +223,7 @@ $fontPTSans: 'PT Sans', sans-serif;
         top: 8px;
         left: -200px;
         height: 10px;
-        background-color: black;
+        background-color: $color-black;
         margin-right: -200px;
     }
 }
@@ -238,7 +239,7 @@ $fontPTSans: 'PT Sans', sans-serif;
         p {
             font-size: 20pt;
             font-style: italic;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-family: $fontCambria;
             padding-bottom: 40px;
         }
     }
@@ -292,7 +293,7 @@ $fontPTSans: 'PT Sans', sans-serif;
         top: -50px;
         width: 100%;
         height: 1px;
-        background-color: #d0d0d0;
+        background-color: $color-background-point;
     }
 
     .title {
@@ -302,15 +303,15 @@ $fontPTSans: 'PT Sans', sans-serif;
     }
 
     .quote {
-        background-color: white;
+        background-color: $color-white;
 
         i {
             font-size: 40.5pt;
         }
 
         p {
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-size: 12.5pt;
+            font-family: $fontCambria;
+            font-size: 11pt;
             font-style: italic;
             padding: 30px 0;
         }
@@ -322,7 +323,7 @@ $fontPTSans: 'PT Sans', sans-serif;
         p {
             font-size: 20pt;
             font-style: italic;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-family: $fontCambria;
             padding-bottom: 40px;
         }
     }
@@ -392,6 +393,6 @@ $fontPTSans: 'PT Sans', sans-serif;
         position: relative;
         top: -230px;
         height: 1px;
-        background-color: white;
+        background-color: $color-white;
     }
 }

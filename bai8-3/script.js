@@ -53,16 +53,16 @@ $(() => {
   }
   $(function () {
     $(".onThumbnail").click(function () {
-      $(".container .button div").removeClass("offThumb");
+      $(".container .button div").removeClass("off");
     });
     $(".offThumbnail").click(function () {
-      $(".container .button div").addClass("offThumb");
+      $(".container .button div").addClass("off");
     });
     $(".onDot").click(function () {
-      $(".dots a").removeClass("offDots");
+      $(".dots a").removeClass("off");
     });
     $(".offDot").click(function () {
-      $(".dots a").addClass("offDots");
+      $(".dots a").addClass("off");
     });
   });
 });

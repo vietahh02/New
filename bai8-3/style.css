@@ -78,11 +78,7 @@
     right: 80px;
 }
 
-.offThumb {
-    display: none;
-}
-
-.offDots {
+.off {
     display: none;
 }
 

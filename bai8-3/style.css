@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.container .slider {
+    margin: auto;
+    width: 800px;
+    height: 600px;
+    overflow: hidden;
+}
+
+.container .slider .wap {
+    width: 4800px;
+    transition: all 1s linear;
+}
+
+.container .slider .wap a img {
+    width: 800px;
+    height: 600px;
+}
+
+.container .slider .wap a {
+    float: left;
+}
+
+.dots {
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dots a {
+    font-size: 0;
+    padding: 8px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 2px;
+}
+
+.active {
+    background-color: black !important;
+}
+
+.container .button a {
+    position: relative;
+    top: 300px;
+    font-size: 27px;
+    z-index: 10;
+}
+
+.container .button div img {
+    visibility: hidden;
+    position: absolute;
+    width: 160px;
+    height: 120px;
+    top: 300px;
+}
+
+.container .button:hover img {
+    visibility: visible;
+}
+
+.container .thumbnailPrev div img {
+    left: 80px;
+}
+
+.container .thumbnailNext div img {
+    right: 80px;
+}
+
+.offThumb {
+    display: none;
+}
+
+.offDots {
+    display: none;
+}
+
+button {
+    padding: 2px;
+    margin-left: 30px;
+    cursor: pointer;
+}

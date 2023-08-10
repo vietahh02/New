@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-size: 20px;
+        }
+
+        body {
+            margin: 50px;
+            display: flex;
+            float: left;
+            gap: 0 10px;
+        }
+
+        input[type="submit"] {
+            width: 40px;
+            border-top-color: rgb(202, 202, 202) !important;
+            border-left-color: rgb(202, 202, 202) !important;
+            border-color: black;
+            cursor: pointer;
+        }
+
+        input[type="number"] {
+            border-bottom-color: rgb(202, 202, 202) !important;
+            border-right-color: rgb(202, 202, 202) !important;
+            border-color: black;
+            width: 80px;height: 30px;
+            padding-left: 3px ;
+        }
+
+        b {
+            margin: auto;
+        }
+
+        .result {
+            border: 2px solid black;
+            border-bottom-color: rgb(202, 202, 202) !important;
+            border-right-color: rgb(202, 202, 202) !important;
+            width: 90px;height: 30px;
+            padding-left: 3px ;
+        }
+    </style>
+</head>
+<body>
+<form action="6" method="get">
+    <input type="number" name="a">
+    <input type="submit" value="+" name="operator">
+    <input type="submit" value="-" name="operator">
+    <input type="submit" value="/" name="operator">
+    <input type="submit" value="x" name="operator">
+    <input type="number" name="b">
+</form>
+    <b style="font-size: 25px">=</b>
+</body>
+</html>

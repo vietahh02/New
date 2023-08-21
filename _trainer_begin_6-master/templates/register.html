@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/script.js" defer></script>
+</head>
+<body>
+    <div class="register">
+        <div style="margin-bottom: 20px"><a href="/home">Home</a></div>
+        <form action="/register" method="post" enctype="multipart/form-data">
+        <label for="myFile">
+            <img src="../static/img/img.png" alt=""><br>
+            <input type="file" name="myFile" id="myFile">
+            <input type="text" name="checkImg" id="checkImg" style="display: none">
+        </label><br>
+        <label for="fullName">Full Name:<span>*</span>
+            <input type="text" name="fullName" id="fullName" required>
+        </label><br>
+        <label for="userName">User Name:<span>*</span>
+            <input type="text" name="userName" id="userName" required>
+        </label><br>
+        <label for="email">Email:<span>*</span>
+            <input type="email" name="email" id="email" required>
+        </label><br>
+        <label for="phone">Phone:<span>*</span>
+            <input type="number" name="phone" id="phone" min="999999999" max="9999999999" required>
+        </label><br>
+        <label for="password">Password:<span>*</span>
+            <input type="password" name="password" id="password" required>
+        </label><br>
+        <label for="rePassword">RePassword:<span>*</span>
+            <input type="password" name="rePassword" id="rePassword" required>
+        </label><br>
+        <label for="references">References:
+             <input type="text" name="references" id="references">
+        </label><br>
+            <input type="submit" value="Register">
+        </form>
+        {{if .Error}}
+        <p style="color: red">{{.Error}}</p>
+        {{else if .Success}}
+        <p style="color: chartreuse">{{.Success}}</p>
+        {{end}}
+        <hr>
+      <form action="/login" method="get">
+            <input type="submit" value="Login">
+      </form>
+    </div>
+    
+</body>
+</html>

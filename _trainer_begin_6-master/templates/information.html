@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/js/script.js" defer></script>
+</head>
+<body>
+<div class="home">
+    <div class="header">
+        <div><a href="/home">Home</a></div>
+        <div class="user" id="user">
+            <div><a href="/infor" id="cookieValue"></a></div>
+            <div><button id="deleteCookie">LogOut</button></div>
+        </div>
+    </div>
+
+
+    {{if .}}
+    <form action="/infor" method="post" enctype="multipart/form-data">
+    <label for="myFile">
+        <img src="{{.Image}}" alt=""><br>
+        <input type="file" name="myFile" id="myFile">
+        <input type="text" name="checkImg" id="checkImg" style="display: none" value="{{.Image}}">
+    </label><br>
+    <label for="fullName">Full Name:<span>*</span>
+        <input type="text" name="fullName" id="fullName" value="{{.FullName}}" required>
+    </label><br>
+    <label for="userName">User Name:<span>*</span>
+        <input type="text" name="userName" id="userName" value="{{.UserName}}" required>
+    </label><br>
+    <label for="email">Email:<span>*</span>
+        <input type="email" name="email" id="email" value="{{.Email}}" required>
+    </label><br>
+    <label for="phone">Phone:<span>*</span>
+        <input type="number" name="phone" id="phone" min="1000000000" max="10000000000" value="{{.Phone}}" required>
+    </label><br>
+    <label for="password">Password:<span>*</span>
+        <input type="password" name="password" id="password" value="{{.Password}}" required>
+    </label><br>
+        <label for="rePassword">RePassword:<span>*</span>
+            <input type="password" name="rePassword" id="rePassword" value="{{.Password}}" required>
+        </label><br>
+        <label>Gender:
+            {{if eq .Gender "0"}}
+            <input type="radio" name="gender" value="0" checked>Female
+            <input type="radio" name="gender" value="1">Male
+            {{else if eq .Gender "1"}}
+            <input type="radio" name="gender" value="0">Female
+            <input type="radio" name="gender" value="1" checked>Male
+            {{else}}
+            <input type="radio" name="gender" value="0">Female
+            <input type="radio" name="gender" value="1">Male
+            {{end}}
+        </label><br>
+        <label for="dob">BoD
+            <input type="date" name="dob" id="dob"value="{{.Dob}}">
+        </label><br>
+        <label for="date">Date
+            <input type="date"  id="date"value="{{.Date}}" readonly>
+        </label><br>
+        <label for="des" style="display: inline-flex;"><p>Description:</p>
+            <textarea name="des" id="des" cols="30" rows="10" maxlength="200" >{{.Desc}}</textarea>
+        </label><br>
+
+        <input type="submit" value="Update">
+    </form>
+        <div style="padding: 9px">Amount of your referrals: {{.CountRefer}} users</div>
+        {{if .ListRefer}}
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td>Date</td>
+                </tr>
+            {{range .ListRefer}}
+                <tr>
+                    <td>{{.NameRefer}}</td>
+                    <td>{{.Date}}</td>
+                </tr>
+            {{end}}
+
+        {{end}}
+            </table>
+    {{end}}
+</div>
+
+<script>
+    function deleteCookie(name) {
+        document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    }
+
+    function getCookie(name) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+
+    function displayCookie() {
+        var myCookieValue = getCookie("acc");
+        var noElements = document.querySelectorAll(".no");
+        if (myCookieValue) {
+            s = myCookieValue.split("/")
+            document.getElementById("cookieValue").innerHTML = s[0];
+            document.getElementById("user").style.display = "flex"
+            document.getElementById("lore").style.display = "none"
+            for (var i = 0; i < noElements.length; i++) {
+                noElements[i].show();
+            }
+        } else {
+            document.getElementById("cookieValue").innerHTML = "";
+            document.getElementById("lore").style.display = "flex"
+            document.getElementById("user").style.display = "none"
+            for (var i = 0; i < noElements.length; i++) {
+                noElements[i].style.display = "none";
+            }
+        }
+    }
+
+    document.getElementById("deleteCookie").addEventListener("click", function() {
+        deleteCookie("acc");
+        displayCookie();
+        window.location.href = "/home"
+    });
+
+    displayCookie();
+</script>
+</body>
+</html>

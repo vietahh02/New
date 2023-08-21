@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <script src="../static/js/script.js" defer></script>
+  </head>
+  <body>
+    <div class="home">
+      <div class="header">
+        <div><a href="/home">Home</a></div>
+        <div class="lore" id="lore">
+          <form action="/login" method="get">
+            <input type="submit" value="Login" />
+          </form>
+          <form action="/register" method="get">
+            <input type="submit" value="Register" />
+          </form>
+        </div>
+        <div class="user" id="user">
+          <div><a href="/infor" id="cookieValue"></a></div>
+          <div><button id="deleteCookie">LogOut</button></div>
+        </div>
+      </div>
+        Show rows:
+        <div class="pad">
+            <div><a href="/home?display=10#">10</a></div>
+            <div><a href="/home?display=20#">20</a></div>
+            <div><a href="/home?display=50#">50</a></div>
+            <div><a href="/home?display=100#">100</a></div>
+        </div><br>
+
+      {{if .}}
+        <div class="list">
+            <div class="ele">
+                <div>Picture</div>
+                <div>FullName</div>
+                <div class="no">References</div>
+                <div class="no">Date</div>
+                <div></div>
+            </div>
+            {{range .}}
+            <div class="ele">
+                {{if .}}
+                <div><img src="{{.Image}}" alt=""></div>
+                <div>{{.FullName}}</div>
+                <div class="no">{{.References}}</div>
+                <div class="no">{{.Date}}</div>
+                <div>
+                    <a href="/detail?u={{.UserName}}#">Detail</a>
+                </div>
+                {{end}}
+            </div>
+            {{end}}
+        </div>
+      {{end}}
+
+        <div class="tabs" id="tabs"></div>
+        <script>
+            function getCookieValue(cookieName) {
+                var name = cookieName + "=";
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var cookieArray = decodedCookie.split(';');
+                for (var i = 0; i < cookieArray.length; i++) {
+                    var cookie = cookieArray[i].trim();
+                    if (cookie.indexOf(name) === 0) {
+                        return cookie.substring(name.length, cookie.length);
+                    }
+                }
+                return null;
+            }
+
+            const tabs = document.getElementById("tabs")
+            var liCookieValue = getCookieValue("li");
+            var tab = Math.ceil(Number(liCookieValue))
+            console.log(liCookieValue)
+            console.log(Number(liCookieValue))
+            console.log(tab)
+            for (i = 1;i<=tab;i++) {
+                const ne = document.createElement("div")
+                const a = document.createElement("a")
+                a.href = "/home?tabs="+ i +"#"
+                a.innerHTML= i
+                ne.append(a)
+                tabs.append(ne)
+            }
+        </script>
+
+
+    </div>
+
+    <script>
+        function deleteCookie(name) {
+            document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+
+        function getCookie(name) {
+            var value = "; " + document.cookie;
+            var parts = value.split("; " + name + "=");
+            if (parts.length === 2) return parts.pop().split(";").shift();
+        }
+
+        function displayCookie() {
+            var myCookieValue = getCookie("acc");
+            var noElements = document.querySelectorAll(".no");
+            if (myCookieValue) {
+                s = myCookieValue.split("/")
+                document.getElementById("cookieValue").innerHTML = s[0];
+                document.getElementById("user").style.display = "flex"
+                document.getElementById("lore").style.display = "none"
+                for (var i = 0; i < noElements.length; i++) {
+                    noElements[i].show();
+                }
+            } else {
+                document.getElementById("cookieValue").innerHTML = "";
+                document.getElementById("lore").style.display = "flex"
+                document.getElementById("user").style.display = "none"
+                for (var i = 0; i < noElements.length; i++) {
+                    noElements[i].style.display = "none";
+                }
+            }
+        }
+
+        document.getElementById("deleteCookie").addEventListener("click", function() {
+            deleteCookie("acc");
+            displayCookie();
+            window.location.href = "/home"
+        });
+
+        displayCookie();
+    </script>
+  </body>
+</html>

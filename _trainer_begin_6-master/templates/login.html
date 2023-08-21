@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+  </head>
+  <body>
+    <div class="login">
+      <div style="margin-bottom: 20px"><a href="/home">Home</a></div>
+      <form action="/login" method="post">
+        <label for="userName">
+          User Name:<span>*</span>
+          <input type="text" name="userName" id="userName" required /> 
+          </label><br />
+        <label for="password">
+          Password:<span>*</span>
+          <input type="password" name="password" id="password" required />
+        </label><br>
+        <input type="submit" value="Login" />
+      </form>
+      {{if .}}
+        <p style="color: red">{{.}}</p>
+      {{end}}
+      <hr>
+      <form action="/register" method="get">
+            <input type="submit" value="Register">
+      </form>
+    </div>
+  </body>
+</html>

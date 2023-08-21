@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <script src="../static/js/script.js" defer></script>
+</head>
+<body>
+    <div class="home">
+        <div class="header">
+            <div><a href="/home">Home</a></div>
+            <div class="lore" id="lore">
+                <form action="/login" method="get">
+                    <input type="submit" value="Login" />
+                </form>
+                <form action="/register" method="get">
+                    <input type="submit" value="Register" />
+                </form>
+            </div>
+            <div class="user" id="user">
+                <div><a href="/infor" id="cookieValue"></a></div>
+                <div><button id="deleteCookie">LogOut</button></div>
+            </div>
+        </div>
+
+        {{if .UserName}}
+        <form action="#" method="post" enctype="multipart/form-data">
+            <label for="myFile">
+                <img src="{{.Image}}" alt=""><br>
+                <input type="file" name="myFile" id="myFile">
+                <input type="text" name="checkImg" id="checkImg" style="display: none" value="{{.Image}}">
+            </label><br>
+            <label for="fullName">Full Name:<span>*</span>
+                <input type="text" name="fullName" id="fullName" value="{{.FullName}}" required>
+            </label><br>
+            <label for="userName">User Name:<span>*</span>
+                <input type="text" name="userName" id="userName" value="{{.UserName}}" readonly>
+            </label><br>
+            <label for="email">Email:<span>*</span>
+                <input type="email" name="email" id="email" value="{{.Email}}" readonly>
+            </label><br>
+            <label for="phone">Phone:<span>*</span>
+                <input type="number" name="phone" id="phone" min="1000000000" max="10000000000" value="{{.Phone}}" required>
+            </label><br>
+            <label>Gender:
+                {{if eq .Gender "0"}}
+                <input type="radio" name="gender" value="0" checked>Female
+                <input type="radio" name="gender" value="1">Male
+                {{else if eq .Gender "1"}}
+                <input type="radio" name="gender" value="0">Female
+                <input type="radio" name="gender" value="1" checked>Male
+                {{else}}
+                <input type="radio" name="gender" value="0">Female
+                <input type="radio" name="gender" value="1">Male
+                {{end}}
+            </label><br>
+            <label for="dob">DoB
+                <input type="date" name="dob" id="dob"value="{{.Dob}}">
+            </label><br>
+            <label for="date">Date
+                <input type="date" id="date"value="{{.Date}}" readonly>
+            </label><br>
+            <label for="des" style="display: inline-flex;"><p>Description:</p>
+                <textarea name="des" id="des" cols="30" rows="10" maxlength="200" >{{.Desc}}</textarea>
+            </label><br>
+                {{if .Role}}
+                    <label for="role">Role:
+                        <input type="number" min="1" max="3" name="role" id="role" value="{{.Role}}">
+                    </label><br>
+                {{end}}
+
+            <input type="submit" value="Update">
+        </form>
+
+        {{else}}
+        <label>
+            <img src="{{.Image}}" alt=""><br>
+        </label><br>
+        <label>Full Name:
+            <input type="text" name="fullName" value="{{.FullName}}" readonly>
+        </label><br>
+        <label for="lo"><p style="font-size: 20px">Please login to view more information</p><br>
+            <form action="/login" method="get">
+                <input type="submit" value="Login" id="lo" />
+            </form>
+        </label>
+        {{end}}
+    </div>
+
+    <script>
+        function deleteCookie(name) {
+            document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+
+        function getCookie(name) {
+            var value = "; " + document.cookie;
+            var parts = value.split("; " + name + "=");
+            if (parts.length === 2) return parts.pop().split(";").shift();
+        }
+
+        function displayCookie() {
+            var myCookieValue = getCookie("acc");
+            var noElements = document.querySelectorAll(".no");
+            if (myCookieValue) {
+                s = myCookieValue.split("/")
+                document.getElementById("cookieValue").innerHTML = s[0];
+                document.getElementById("user").style.display = "flex"
+                document.getElementById("lore").style.display = "none"
+                for (var i = 0; i < noElements.length; i++) {
+                    noElements[i].show();
+                }
+            } else {
+                document.getElementById("cookieValue").innerHTML = "";
+                document.getElementById("lore").style.display = "flex"
+                document.getElementById("user").style.display = "none"
+                for (var i = 0; i < noElements.length; i++) {
+                    noElements[i].style.display = "none";
+                }
+            }
+        }
+
+        document.getElementById("deleteCookie").addEventListener("click", function() {
+            deleteCookie("acc");
+            displayCookie();
+            window.location.href = "/home"
+        });
+
+        displayCookie();
+    </script>
+</body>
+</html>

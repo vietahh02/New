@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+input[type=date] {
+  padding: 5px;
+  margin: 10px;
+}
+
+input[type=number] {
+  width: 250px;
+}
+
+input[type=submit],
+input[type=button] {
+  padding: 5px;
+  margin: 10px;
+}
+
+.login,
+.register {
+  margin: auto;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.login img,
+.register img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  background: #dfdfdf;
+}
+
+.home img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  background: #dfdfdf;
+}
+
+span {
+  color: red;
+}
+
+
+hr {
+  width: 400px;
+  margin: auto;
+}
+
+.checkImg {
+  display: none
+}
+
+.home {
+  max-width: 1600px;
+  width: 100%;
+  margin: auto;
+  margin: 50px 0;
+  text-align: center;
+}
+
+.home .header {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+.home .header a {
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.home .header .lore {
+  display: flex;
+}
+
+.home .header .user {
+  gap: 0 20px;
+  /*display: none;*/
+}
+
+.home .header .user button {
+  padding: 5px;
+}
+
+.home .header .user a {
+  font-size: 30px;
+}
+
+.pad {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.pad div a {
+  text-decoration: none;
+  color: blue;
+}
+
+.pad div a:hover {
+  color: red;
+}
+
+.list  {
+  margin: auto;
+  text-align: center;
+}
+
+.list .ele div {
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  gap: 10px;
+  text-align: center;
+}
+.list .ele div a {
+  color: #dfdfdf;
+  background: red;
+  padding: 7px;
+  text-decoration: none;
+}
+
+.no {
+  display: none;
+}
+
+table {
+  margin: auto;
+}
+
+tr, td {
+  border: 1px solid black;
+  width: 200px;
+  padding: 5px 0;
+}
+
+.tabs {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.tabs div a {
+  text-decoration: none;
+  color: blue;
+}
+
+.tabs div a:hover {
+  color: red;
+}
+
+div a {
+  text-decoration: none;
+
+}

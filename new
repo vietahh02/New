@@ -1,0 +1,31 @@
+package main
+
+import (
+	"database/sql"
+	"fmt"
+
+	_ "github.com/go-sql-driver/mysql"
+)
+
+var db *sql.DB
+
+func main() {
+	var err error
+	db, err = sql.Open("mysql", "root:1234567890@tcp(localhost:3306)/shopcart")
+	if err != nil {
+		panic(err.Error())
+	}
+	k := test()
+	fmt.Println(k)
+}
+
+func test() string {
+	rows, _ := db.Query("SELECT name_en FROM vietnam.administrative_regions;")
+	var name string
+	s := ""
+	for rows.Next() {
+		rows.Scan(&name)
+		s += name + ","
+	}
+	return s
+}

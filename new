@@ -1,31 +1,18 @@
-package main
+enp0s3: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255
+        inet6 fe80::975:1e4b:48b4:7e3  prefixlen 64  scopeid 0x20<link>
+        ether 08:00:27:c4:d9:2a  txqueuelen 1000  (Ethernet)
+        RX packets 13  bytes 2086 (2.0 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 67  bytes 8292 (8.2 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-import (
-	"database/sql"
-	"fmt"
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 108  bytes 9165 (9.1 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 108  bytes 9165 (9.1 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
-	_ "github.com/go-sql-driver/mysql"
-)
-
-var db *sql.DB
-
-func main() {
-	var err error
-	db, err = sql.Open("mysql", "root:1234567890@tcp(localhost:3306)/shopcart")
-	if err != nil {
-		panic(err.Error())
-	}
-	k := test()
-	fmt.Println(k)
-}
-
-func test() string {
-	rows, _ := db.Query("SELECT name_en FROM vietnam.administrative_regions;")
-	var name string
-	s := ""
-	for rows.Next() {
-		rows.Scan(&name)
-		s += name + ","
-	}
-	return s
-}
